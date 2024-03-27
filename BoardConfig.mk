@@ -1,3 +1,6 @@
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
 DEVICE_TREE := device/samsung/hl3gds
 
 # Bootloader
@@ -19,7 +22,6 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_CUSTOM_BOOTIMG_MK :=  $(DEVICE_TREE)/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_DT := $(DEVICE_TREE)/prebuilt/dtb
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --dt device/samsung/hl3gds/prebuilt/dtb
